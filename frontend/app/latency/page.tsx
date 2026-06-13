@@ -62,7 +62,7 @@ export default function LatencyPage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
                 <XAxis dataKey="vertical" tick={{ fontSize:10, fill:"var(--color-text-faint)" }} tickLine={false} />
                 <YAxis tickFormatter={msToS} tick={{ fontSize:11, fill:"var(--color-text-faint)" }} tickLine={false} axisLine={false} width={44} />
-                <Tooltip contentStyle={TT} formatter={(v:number) => [msToS(v), ""]} />
+                <Tooltip contentStyle={TT} formatter={(v) => [msToS(Number(v)), ""]} />
                 <Bar dataKey="avg_ms" name="Avg" fill="var(--chart-2)" radius={[4,4,0,0]} />
                 <Bar dataKey="p95_ms" name="p95" fill="var(--chart-3)" radius={[4,4,0,0]} />
               </BarChart>

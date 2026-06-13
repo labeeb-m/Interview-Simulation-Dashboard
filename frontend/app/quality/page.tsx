@@ -47,7 +47,7 @@ export default function QualityPage() {
                 <XAxis dataKey="vertical" tick={{ fontSize:11, fill:"var(--color-text-faint)" }} tickLine={false} />
                 <YAxis tickFormatter={(v)=>`${v}%`} tick={{ fontSize:11, fill:"var(--color-text-faint)" }}
                   tickLine={false} axisLine={false} width={40} />
-                <Tooltip contentStyle={TT} formatter={(v:number) => [`${v}%`, ""]} />
+                <Tooltip contentStyle={TT} formatter={(v) => [`${Number(v)}%`, ""]} />
                 <Legend wrapperStyle={{ fontSize:12, color:"var(--color-text-muted)" }} />
                 <Bar dataKey="match_pct"     name="Match Score"    fill="var(--chart-1)" radius={[4,4,0,0]} />
                 <Bar dataKey="shortlist_pct" name="Shortlist Rate" fill="var(--chart-4)" radius={[4,4,0,0]} />

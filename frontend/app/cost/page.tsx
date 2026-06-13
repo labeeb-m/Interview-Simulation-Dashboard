@@ -44,7 +44,7 @@ export default function CostPage() {
                 <YAxis yAxisId="right" orientation="right"
                   tick={{ fontSize:11, fill:"var(--color-text-faint)" }} tickLine={false} axisLine={false} />
                 <Tooltip contentStyle={TT}
-                  formatter={(v:number, name:string) => name === "avg_cost_usd" ? [`$${v.toFixed(4)}`, "Avg Cost"] : [v, "Interviews"]} />
+                  formatter={(v, name) => name === "avg_cost_usd" ? [`$${Number(v).toFixed(4)}`, "Avg Cost"] : [Number(v), "Interviews"]} />
                 <Legend wrapperStyle={{ fontSize:12, color:"var(--color-text-muted)" }} />
                 <Bar yAxisId="right" dataKey="interview_count" name="Interviews"
                   fill="var(--color-surface-offset)" radius={[2,2,0,0]} />

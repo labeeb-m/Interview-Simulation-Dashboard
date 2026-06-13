@@ -27,14 +27,14 @@ const FLAG_COLORS: Record<string,string> = {
 };
 
 function pivotTrend(rows: FlagTrend[]) {
-  const byDate: Record<string, Record<string,number>> = {};
+  const byDate: Record<string, Record<string, number | string>> = {};
   const flagSet = new Set<string>();
   for (const r of rows) {
     byDate[r.date] ??= { date: r.date };
     byDate[r.date][r.flag] = r.count;
     flagSet.add(r.flag);
   }
-  return { data: Object.values(byDate).sort((a,b)=>a.date.localeCompare(b.date)), flags: [...flagSet] };
+  return { data: Object.values(byDate).sort((a,b)=> String(a.date).localeCompare(String(b.date))), flags: [...flagSet] };
 }
 
 export default function FlagsPage() {

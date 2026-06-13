@@ -110,7 +110,7 @@ export default function OverviewPage() {
                 <XAxis dataKey="date" tick={{ fontSize: 11, fill: "var(--color-text-faint)" }} tickLine={false} />
                 <YAxis tick={{ fontSize: 11, fill: "var(--color-text-faint)" }} tickLine={false} axisLine={false}
                   tickFormatter={(v) => `$${v.toFixed(4)}`} width={70} />
-                <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v: number) => [`$${v.toFixed(4)}`, "Avg Cost"]} />
+                <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v) => [`$${Number(v).toFixed(4)}`, "Avg Cost"]} />
                 <Line type="monotone" dataKey="avg_cost_usd" stroke="var(--chart-1)"
                   strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
               </LineChart>
@@ -131,7 +131,7 @@ export default function OverviewPage() {
                 <YAxis domain={[0, 1]} tickFormatter={(v) => `${(v * 100).toFixed(0)}%`}
                   tick={{ fontSize: 11, fill: "var(--color-text-faint)" }} tickLine={false} axisLine={false} width={40} />
                 <Tooltip contentStyle={TOOLTIP_STYLE}
-                  formatter={(v: number) => [`${(v * 100).toFixed(1)}%`, "Avg Match Score"]} />
+                  formatter={(v) => [`${(Number(v) * 100).toFixed(1)}%`, "Avg Match Score"]} />
                 <Bar dataKey="avg_match_score" fill="var(--chart-2)" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
@@ -155,7 +155,7 @@ export default function OverviewPage() {
                   tickFormatter={(v) => `${v}%`} />
                 <YAxis dataKey="flag" type="category" tick={{ fontSize: 10, fill: "var(--color-text-faint)" }}
                   tickLine={false} axisLine={false} width={130} />
-                <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v: number) => [`${v}%`, "Rate"]} />
+                <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v) => [`${Number(v)}%`, "Rate"]} />
                 <Bar dataKey="rate_pct" fill="var(--chart-5)" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>

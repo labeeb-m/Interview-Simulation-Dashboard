@@ -125,7 +125,7 @@ export default function ConversationsPage() {
                 </tr>
               </thead>
               <tbody>
-                {data?.items.map((c) => (
+                {data?.items.map((c, key) => (
                   <>
                     <tr
                       key={c.id}
