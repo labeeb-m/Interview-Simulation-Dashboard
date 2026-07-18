@@ -1,14 +1,14 @@
-# Asendia Monitor
+# AI Monitor Dashboard 
 
-> Observability platform for AI recruitment agents, built specifically for [Asendia AI (YC P26)](https://asendia.ai).
+> Observability platform for AI recruitment agents.
 
-**[Live Demo →](https://interview-simulation-dashboard.vercel.app)** · [Backend API](Contact Admin)
+**[Live Demo](https://interview-simulation-dashboard.vercel.app)** ·
 
 ---
 
 ## Why This Exists
 
-Sarah runs 24/7 screening interviews across IT, healthcare, sales, engineering, and more. At scale, things degrade silently, latency creeps up, match scores drop on certain verticals, ATS syncs fail, candidates ghost mid-session. There's no single place to see it.
+AI Interviewers run 24/7 screening interviews across IT, healthcare, sales, engineering, and more. At scale, things degrade silently, latency creeps up, match scores drop on certain verticals, ATS syncs fail, candidates ghost mid-session. There's no single place to see it.
 
 This dashboard surfaces those signals before they become a support ticket.
 
@@ -75,8 +75,8 @@ Demo data: 2,200 synthetic interviews seeded with realistic vertical-specific la
 
 ### 1. Database
 ```bash
-createdb -U postgres asendia_monitor
-psql -U postgres asendia_monitor < backend/schema.sql
+createdb -U postgres your_db
+psql -U postgres your_db < backend/schema.sql
 ```
 
 ### 2. Backend
@@ -86,7 +86,7 @@ python -m venv venv && source venv/bin/activate  # Windows: venv\Scripts\activat
 pip install -r requirements.txt
 
 cp .env.example .env
-# Set DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/asendia_monitor
+# Set DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/your_db
 
 python seed.py
 uvicorn app.main:app --reload --port 8000
