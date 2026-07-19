@@ -8,7 +8,7 @@ async def get_pool() -> asyncpg.Pool:
     global _pool
     if _pool is None:
         _pool = await asyncpg.create_pool(
-            dsn=os.getenv("DATABASE_URL", "postgresql://postgres:%40123%24@localhost:5432/asendia_monitor"),
+            dsn=os.getenv("DATABASE_URL", "postgresql://postgres:[YOUR_PASSWORD]@localhost:5432/asendia_monitor"),
             min_size=2,
             max_size=10,
         )
