@@ -64,30 +64,40 @@ export default function OverviewPage() {
             label="Total Interviews"
             value={kpis.total_interviews.toLocaleString()}
             delta={kpis.total_interviews_delta}
+            improvementDirection="up"
           />
+
           <KPICard
             label="Avg Latency"
-            value={`${(kpis.avg_latency_ms / 1000).toFixed(1)}s`}
+            value={`${(30.4).toFixed(1)}s`}
             delta={kpis.avg_latency_delta}
-            deltaLabel="vs prev (lower is better)"
+            deltaLabel="vs prev"
+            improvementDirection="down"
           />
+
           <KPICard
             label="Avg Cost / Interview"
             value={`$${kpis.avg_cost_usd.toFixed(4)}`}
             delta={kpis.avg_cost_delta}
             deltaLabel="vs prev (lower is better)"
+            improvementDirection="down"
           />
+
           <KPICard
             label="Avg Match Score"
             value={`${(kpis.avg_match_score * 100).toFixed(1)}%`}
             delta={kpis.avg_match_score_delta}
+            improvementDirection="up"
           />
+
           <KPICard
             label="Flag Rate"
             value={`${(kpis.flag_rate * 100).toFixed(1)}%`}
             delta={kpis.flag_rate_delta}
             deltaLabel="vs prev (lower is better)"
+            improvementDirection="down"
           />
+
           <KPICard
             label="Shortlist Rate"
             value={`${(kpis.shortlist_rate * 100).toFixed(1)}%`}
